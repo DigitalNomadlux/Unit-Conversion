@@ -75,13 +75,22 @@ h3 {
   padding: 20px 0;
 }
 
-.display-block {
+.display-block,
+.display-block > input {
   width: 115px;
   height: 80px;
-  border: 2px solid #B295FF;
+  border: 1px solid #B295FF;
   border-radius: 5px;
   margin: auto;
   margin-bottom: 20px;
+  background: transparent;
+  font-size: 40px;
+  color: var(--white);
+  text-align: center;
+}
+
+.display-block > input:focus {
+  outline: none;
 }
 
 .hero-wrapper {
