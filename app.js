@@ -1,16 +1,25 @@
 const convertBtn = document.getElementById("convert-btn");
-let convertEl = document.getElementById("convert-num");
-let lengthEl = document.getElementById("length-el");
-let volumeEl = document.getElementById("volume-el");
-let massEl = document.getElementById("mass-el");
+const convertEl = document.getElementById("convert-num");
+const lengthEl = document.getElementById("length-el");
+const volumeEl = document.getElementById("volume-el");
+const massEl = document.getElementById("mass-el");
 
 const meterToFt = 3.281;
-const literToGal = 0.264;
-const kiloToPound = 2.204;
+const literToGal = 3.785;
+const kiloToPound = 2.205;
 
 convertBtn.addEventListener("click", function() {
   let baseVal = convertEl.value;
-  lengthEl.textContent = `${baseVal} meter = ${baseVal * meterToFt} feet | ${baseVal} feet = ${baseVal / meterToFt}`
-  volumeEl.textContent = `${baseVal} liters = ${baseVal * literToGal} gallons | ${baseVal} gallons = ${baseVal / literToGal}`
-  massEl.textContent = `${baseVal} kilograms = ${baseVal * kiloToPound} lbs | ${baseVal} lbs = ${baseVal / kiloToPound}`
+  
+  lengthEl.textContent =
+    `${baseVal} meter = ${(baseVal * meterToFt).toFixed(3)} feet
+    | ${baseVal} feet = ${(baseVal / meterToFt).toFixed(3)} meter`
+
+  volumeEl.textContent =
+    `${baseVal} liters = ${(baseVal / literToGal).toFixed(3)} gallons
+    | ${baseVal} gallons = ${(baseVal * literToGal).toFixed(3)} liters`
+
+  massEl.textContent =
+    `${baseVal} kilograms = ${(baseVal * kiloToPound).toFixed(3)} lbs
+    | ${baseVal} lbs = ${(baseVal / kiloToPound).toFixed(3)} kilograms`
 })
